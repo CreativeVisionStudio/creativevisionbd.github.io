@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Creative Vision Studio — website design, logo design, graphic design, video editing and photo editing.">
+  <meta name="theme-color" content="#080b14">
+  <title>Creative Vision Studio | Digital Design & Creative Services</title>
+  <style>
+    :root {
+      --bg:#080b14; --surface:#101727; --surface2:#141e31; --text:#f6f7ff;
+      --muted:#a8b3c9; --line:rgba(255,255,255,.11); --cyan:#67e8f9;
+      --violet:#a78bfa; --pink:#f0abfc; --radius:22px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;scroll-padding-top:100px}
+    body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;background:radial-gradient(circle at 78% -5%,#30205b 0,transparent 32%),radial-gradient(circle at 0% 42%,#0c3341 0,transparent 25%),var(--bg);color:var(--text);line-height:1.65}
+    a{color:inherit;text-decoration:none}
+    .wrap{width:min(1160px,92%);margin:auto}
+    .topbar{position:sticky;top:0;z-index:50;background:rgba(8,11,20,.86);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+    .nav{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:22px}
+    .brand{display:flex;align-items:center;gap:11px;font-weight:850;letter-spacing:-.035em;white-space:nowrap}
+    .brandmark{width:42px;height:42px;display:grid;place-items:center;border-radius:14px;background:linear-gradient(135deg,var(--cyan),var(--violet));color:#090b15;font-weight:950;font-size:1.05rem;box-shadow:0 8px 25px #8b5cf633}
+    .brandname{font-size:1.02rem;line-height:1.1}
+    .brandname small{display:block;color:var(--muted);font-size:.64rem;letter-spacing:.15em;text-transform:uppercase;margin-top:5px}
+    .navlinks{display:flex;align-items:center;gap:23px;color:#c0c9da;font-size:.87rem;font-weight:650}
+    .navlinks a{transition:color .2s;white-space:nowrap}
+    .navlinks a:hover,.navlinks a.active{color:var(--cyan)}
+    .navcta{font-size:.86rem;padding:10px 15px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 18px;border-radius:999px;font-weight:800;border:1px solid transparent;transition:.2s;white-space:nowrap}
+    .primary{background:linear-gradient(110deg,var(--cyan),var(--violet));color:#090b15}
+    .primary:hover{transform:translateY(-2px);box-shadow:0 12px 28px #8b5cf633}
+    .outline{border-color:var(--line);background:#ffffff06;color:var(--text)}
+    .outline:hover{border-color:#67e8f966;background:#67e8f90c}
+    .hero{padding:92px 0 78px;display:grid;grid-template-columns:1.12fr .88fr;align-items:center;gap:55px}
+    .eyebrow{display:inline-flex;align-items:center;gap:9px;color:#a5f3fc;background:#22d3ee10;border:1px solid #22d3ee35;border-radius:999px;padding:7px 13px;font-size:.8rem;font-weight:750}
+    .dot{width:7px;height:7px;border-radius:50%;background:#67e8f9;box-shadow:0 0 12px #67e8f9}
+    h1{font-size:clamp(2.8rem,6vw,5.15rem);line-height:1.04;letter-spacing:-.07em;margin:22px 0}
+    .gradient{background:linear-gradient(100deg,var(--cyan),var(--violet) 60%,var(--pink));-webkit-background-clip:text;background-clip:text;color:transparent}
+    .hero p{color:var(--muted);max-width:620px;font-size:1.06rem}
+    .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:29px}
+    .trustline{display:flex;align-items:center;gap:10px;color:#bdc8da;font-size:.82rem;margin-top:24px}
+    .trustline span{color:var(--cyan)}
+    .visual{padding:18px;border:1px solid var(--line);border-radius:30px;background:linear-gradient(145deg,#17233b,#0d1320);box-shadow:0 35px 100px #0006;position:relative;overflow:hidden}
+    .visual:before{content:"";position:absolute;width:250px;height:250px;border-radius:50%;background:#8b5cf633;filter:blur(10px);right:-90px;top:-90px}
+    .visual-main{position:relative;min-height:305px;border-radius:22px;background:linear-gradient(140deg,#28205a,#0b4754);border:1px solid #ffffff19;display:flex;flex-direction:column;justify-content:space-between;padding:25px;overflow:hidden}
+    .visual-main:after{content:"";position:absolute;width:220px;height:220px;border:1px solid #ffffff30;border-radius:50%;right:-42px;top:45px;box-shadow:0 0 0 25px #ffffff07,0 0 0 50px #ffffff05}
+    .visual-label{font-size:.73rem;letter-spacing:.18em;color:#b8f5fa;font-weight:800;position:relative;z-index:1}
+    .visual-logo{font-size:clamp(3.8rem,8vw,6.2rem);font-weight:950;letter-spacing:-.11em;line-height:1;position:relative;z-index:1}
+    .visual-foot{position:relative;z-index:1;color:#e1e7f3;font-size:.88rem}
+    .statrow{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}
+    .stat{background:#ffffff08;border:1px solid #ffffff0c;border-radius:15px;padding:12px}
+    .stat b{display:block;font-size:1.12rem}.stat span{font-size:.72rem;color:var(--muted)}
+    section{padding:76px 0}
+    .section-head{display:flex;align-items:end;justify-content:space-between;gap:25px;margin-bottom:30px}
+    .kicker{color:var(--cyan);text-transform:uppercase;letter-spacing:.18em;font-size:.73rem;font-weight:850}
+    h2{font-size:clamp(2rem,4vw,3.15rem);line-height:1.12;letter-spacing:-.055em;margin-top:8px}
+    .section-head p{max-width:450px;color:var(--muted);font-size:.95rem}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
+    .service,.project,.aboutbox,.contactbox{border:1px solid var(--line);background:linear-gradient(145deg,#141e30,#0e1421);border-radius:var(--radius)}
+    .service{padding:23px;transition:transform .2s,border-color .2s}
+    .service:hover{transform:translateY(-4px);border-color:#67e8f94a}
+    .ico{width:47px;height:47px;display:grid;place-items:center;border-radius:15px;background:linear-gradient(135deg,#8b5cf633,#22d3ee20);font-size:1.35rem;margin-bottom:17px}
+    h3{font-size:1.08rem;margin-bottom:8px}
+    .service p,.project p,.aboutbox p{color:var(--muted);font-size:.92rem}
+    .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+    .project{padding:13px;overflow:hidden}
+    .art{min-height:205px;border-radius:16px;display:flex;align-items:end;padding:20px;margin-bottom:17px;position:relative;overflow:hidden;background:linear-gradient(135deg,#28205a,#0c5965)}
+    .project:nth-child(2) .art{background:linear-gradient(135deg,#521c50,#1c3155)}
+    .project:nth-child(3) .art{background:linear-gradient(135deg,#164447,#29205d)}
+    .project:nth-child(4) .art{background:linear-gradient(135deg,#5b3a1a,#4a205d)}
+    .art:before{content:"";position:absolute;width:190px;height:190px;border:1px solid #ffffff35;border-radius:50%;right:-20px;top:-55px;box-shadow:0 0 0 24px #ffffff08,0 0 0 48px #ffffff05}
+    .art strong{position:relative;font-size:1.65rem;letter-spacing:-.055em}
+    .pinfo{padding:0 8px 11px}
+    .tag{display:inline-block;color:#b9f5fb;background:#22d3ee12;border:1px solid #22d3ee28;padding:4px 9px;border-radius:999px;font-size:.72rem;margin-bottom:9px}
+    .aboutgrid{display:grid;grid-template-columns:.9fr 1.1fr;gap:18px}
+    .aboutbox{padding:28px}
+    .bigline{font-size:2.1rem;font-weight:900;letter-spacing:-.06em;line-height:1.15;margin-bottom:16px}
+    .skills{display:flex;flex-wrap:wrap;gap:9px;margin-top:19px}
+    .skills span{border:1px solid var(--line);color:#dce6f8;padding:8px 11px;border-radius:999px;font-size:.8rem;background:#ffffff05}
+    .contactarea{background:radial-gradient(circle at 90% 20%,#282052 0,transparent 38%)}
+    .contactbox{display:flex;align-items:center;justify-content:space-between;gap:28px;padding:34px}
+    .contactbox p{color:var(--muted);margin-top:10px;max-width:600px}
+    .contactlinks{display:flex;flex-direction:column;gap:10px;min-width:210px}
+    .contactlinks .btn{width:100%}
+    footer{border-top:1px solid var(--line);padding:25px 0;color:var(--muted);font-size:.84rem}
+    footer .wrap{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+    .mobilehint{display:none}
+    @media(max-width:900px){.nav{flex-wrap:wrap;padding:13px 0}.navlinks{order:3;width:100%;justify-content:space-between;gap:12px;padding:4px 0 2px;overflow-x:auto}.navcta{margin-left:auto}.hero{gap:30px}.navlinks a{font-size:.82rem}}
+    @media(max-width:720px){.hero{grid-template-columns:1fr;padding-top:62px;gap:32px}.grid{grid-template-columns:repeat(2,1fr)}.section-head{display:block}.section-head p{margin-top:12px}.aboutgrid{grid-template-columns:1fr}.contactbox{display:block}.contactlinks{margin-top:24px;max-width:320px}}
+    @media(max-width:500px){.wrap{width:91%}.brandname{font-size:.9rem}.brandmark{width:38px;height:38px}.navcta{display:none}.navlinks{gap:17px;justify-content:flex-start}.grid,.projects{grid-template-columns:1fr}.hero{padding-bottom:48px}section{padding:55px 0}.visual-main{min-height:260px}.stat span{font-size:.67rem}.contactbox{padding:23px}.actions .btn{width:100%}}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <nav class="nav wrap" aria-label="Main navigation">
+      <a class="brand" href="#home" aria-label="Creative Vision Studio home">
+        <span class="brandmark">CV</span>
+        <span class="brandname">Creative Vision Studio<small>Creative • Digital • Design</small></span>
+      </a>
+      <div class="navlinks">
+        <a href="#home">Home</a>
+        <a href="#services">Skills &amp; Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <a class="btn primary navcta" href="#contact">Let's Talk ↗</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="wrap hero" id="home">
+      <div>
+        <div class="eyebrow"><span class="dot"></span> Creative digital services for modern brands</div>
+        <h1>Ideas made<br><span class="gradient">visually powerful.</span></h1>
+        <p>Welcome to <strong>Creative Vision Studio</strong> — a creative portfolio for modern website design, logos, graphics, video editing and photo editing. Helping ideas become clear, memorable digital experiences.</p>
+        <div class="actions">
+          <a class="btn primary" href="#portfolio">Explore Portfolio ↗</a>
+          <a class="btn outline" href="https://wa.me/8801727184207" target="_blank" rel="noopener">WhatsApp Me</a>
+        </div>
+        <div class="trustline"><span>✦</span> Creative thinking · Clean design · Responsive websites</div>
+      </div>
+      <div class="visual">
+        <div class="visual-main">
+          <div class="visual-label">CREATIVE VISION STUDIO / PORTFOLIO</div>
+          <div class="visual-logo">CV<span class="gradient">S.</span></div>
+          <div class="visual-foot">Design with purpose. Create with vision.</div>
+        </div>
+        <div class="statrow">
+          <div class="stat"><b>05+</b><span>Creative skills</span></div>
+          <div class="stat"><b>100%</b><span>Commitment</span></div>
+          <div class="stat"><b>∞</b><span>Ideas to explore</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="wrap">
+        <div class="section-head"><div><div class="kicker">What I can do</div><h2>Skills &amp; Services</h2></div><p>Creative support for individuals, creators and small businesses — bringing your ideas together with a consistent visual style.</p></div>
+        <div class="grid">
+          <article class="service"><div class="ico">🌐</div><h3>Website Design</h3><p>Modern, responsive websites designed for mobile, tablet and desktop screens.</p></article>
+          <article class="service"><div class="ico">✳️</div><h3>Logo Design</h3><p>Distinctive logo concepts to help brands look memorable and professional.</p></article>
+          <article class="service"><div class="ico">🎨</div><h3>Graphic Design</h3><p>Social posts, banners, promotional graphics and marketing visuals.</p></article>
+          <article class="service"><div class="ico">🎬</div><h3>Video Editing</h3><p>Engaging edits for reels, short-form videos and promotional content.</p></article>
+          <article class="service"><div class="ico">📸</div><h3>Photo Editing</h3><p>Image enhancement, color correction and polished visual presentation.</p></article>
+          <article class="service"><div class="ico">💡</div><h3>Creative Solutions</h3><p>Turning early ideas into clear visuals and a stronger online presence.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="portfolio">
+      <div class="wrap">
+        <div class="section-head"><div><div class="kicker">Selected work</div><h2>Portfolio</h2></div><p>Explore the creative work from Creative Vision Studio. Replace these sample cards with your real projects and screenshots as you build your portfolio.</p></div>
+        <div class="projects">
+          <article class="project"><div class="art"><strong>Brand Identity</strong></div><div class="pinfo"><span class="tag">Logo Design</span><h3>Brand identity concept</h3><p>Add a logo you created and a short explanation of the idea behind it.</p></div></article>
+          <article class="project"><div class="art"><strong>Digital Experience</strong></div><div class="pinfo"><span class="tag">Web Design</span><h3>Business website concept</h3><p>Show a website screenshot and add a link to the live website when available.</p></div></article>
+          <article class="project"><div class="art"><strong>Social Creative</strong></div><div class="pinfo"><span class="tag">Graphic Design</span><h3>Social media design</h3><p>Show a poster, cover photo or social post that represents your style.</p></div></article>
+          <article class="project"><div class="art"><strong>Motion Story</strong></div><div class="pinfo"><span class="tag">Video Editing</span><h3>Short video edit</h3><p>Add a video thumbnail and a link to your reel or video sample.</p></div></article>
+        </div>
+        <div class="actions" style="justify-content:center;margin-top:25px">
+          <a class="btn outline" href="https://www.facebook.com/" target="_blank" rel="noopener">Visit Facebook Portfolio ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="wrap">
+        <div class="section-head"><div><div class="kicker">About the studio</div><h2>Creative work with purpose.</h2></div></div>
+        <div class="aboutgrid">
+          <div class="aboutbox"><div class="bigline">A clear vision.<br><span class="gradient">A stronger presence.</span></div><p>Creative Vision Studio brings together design, digital creativity and a focus on details to help ideas look their best online.</p></div>
+          <div class="aboutbox"><h3>Creative toolkit</h3><p>Services and skills offered through the studio:</p><div class="skills"><span>HTML</span><span>CSS</span><span>Website Design</span><span>Logo Design</span><span>Graphic Design</span><span>Video Editing</span><span>Photo Editing</span><span>Visual Branding</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contactarea" id="contact">
+      <div class="wrap">
+        <div class="contactbox">
+          <div><div class="kicker">Let's work together</div><h2>Have a project in mind?</h2><p>Contact Creative Vision Studio for website design, logo design, graphic design, video editing or photo editing. Tell us what you have in mind and let's talk.</p></div>
+          <div class="contactlinks">
+            <a class="btn primary" href="https://wa.me/8801727184207" target="_blank" rel="noopener">WhatsApp · 01727-184207 ↗</a>
+            <a class="btn outline" href="mailto:ertugrulghazixalvi12@gmail.com">Email Us ↗</a>
+            <a class="btn outline" href="https://www.facebook.com/" target="_blank" rel="noopener">Facebook Portfolio ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer><div class="wrap"><span>© <span id="year"></span> Creative Vision Studio. All rights reserved.</span><span>Creative · Digital · Design</span></div></footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const sections = document.querySelectorAll('main section[id]');
+    const links = document.querySelectorAll('.navlinks a');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          links.forEach(link => link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id));
+        }
+      });
+    }, {rootMargin:'-25% 0px -65% 0px'});
+    sections.forEach(section => observer.observe(section));
+  </script>
+</body>
+</html>
