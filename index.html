@@ -25,7 +25,7 @@ a{color:inherit;text-decoration:none}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:12px 18px;border-radius:12px;background:linear-gradient(120deg,var(--blue),#9a8aff);color:#080b16;font-weight:800;font-size:14px;border:1px solid transparent;transition:.2s}
 .btn:hover{transform:translateY(-2px);filter:brightness(1.08)}
 .btn.ghost{background:rgba(255,255,255,.04);border-color:var(--line);color:var(--text)}
-.hero{padding:95px 0 82px;display:grid;grid-template-columns:1.08fr .92fr;align-items:center;gap:50px;min-height:610px}
+.hero{position:relative;isolation:isolate;padding:95px 0 82px;display:grid;grid-template-columns:1.08fr .92fr;align-items:center;gap:50px;min-height:610px}\n.hero:before{content:'';position:absolute;z-index:-1;top:8%;left:-7%;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(124,140,255,.22),rgba(83,224,208,.08) 45%,transparent 72%);filter:blur(18px);animation:heroGlow 9s ease-in-out infinite alternate}\n.hero:after{content:'';position:absolute;z-index:-1;right:3%;bottom:7%;width:180px;height:180px;border-radius:50%;background:radial-gradient(circle,rgba(83,224,208,.14),transparent 70%);filter:blur(12px);animation:heroGlow 11s ease-in-out infinite alternate-reverse}\n@keyframes heroGlow{0%{transform:translate3d(0,0,0) scale(.92);opacity:.55}100%{transform:translate3d(28px,-18px,0) scale(1.12);opacity:1}}\n@keyframes fadeRise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}\n.hero>.visual{animation:fadeRise .9s ease both;animation-delay:.12s}\n.hero>.hero-copy,.hero>div:first-child{animation:fadeRise .8s ease both}\n.eyebrow{animation:fadeRise .7s ease both}\n.visual{animation:floatPanel 7s ease-in-out infinite alternate}\n@keyframes floatPanel{0%{transform:translateY(0)}100%{transform:translateY(-7px)}}
 .eyebrow{display:inline-flex;align-items:center;gap:9px;border:1px solid rgba(124,140,255,.32);background:rgba(124,140,255,.08);color:#c7ceff;padding:7px 12px;border-radius:100px;font-size:12px;font-weight:700;letter-spacing:.7px;text-transform:uppercase}
 .dot{width:7px;height:7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 14px var(--cyan)}
 h1,h2,h3{font-family:Manrope,sans-serif;line-height:1.12;letter-spacing:-1.4px}
@@ -76,6 +76,15 @@ h1 span,.gradient{background:linear-gradient(100deg,#a5b0ff 10%,#63e8d8 95%);-we
 .facebook-copy p{color:var(--muted);font-size:14px}
 .facebook-embed{width:100%;max-width:500px;margin:0 auto;padding:12px;border:1px solid var(--line);border-radius:20px;background:#fff;overflow:hidden;min-height:250px}
 .facebook-embed iframe{display:block;width:100%;max-width:100%;border:0}
+.facebook-posts-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;align-items:start;margin-top:28px}
+.facebook-post-card{min-width:0;display:flex;justify-content:center;overflow:hidden;padding:10px;border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.035);box-shadow:0 14px 38px rgba(0,0,0,.16);transition:transform .25s ease,border-color .25s ease}
+.facebook-post-card:hover{transform:translateY(-4px);border-color:rgba(124,140,255,.42)}
+.facebook-post-card iframe{display:block;width:100%;max-width:100%;border:0;background:#fff;border-radius:10px}
+.facebook-note{text-align:center;color:var(--muted);font-size:12px;margin-top:18px}
+@media(max-width:1100px){.facebook-posts-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:580px){.facebook-posts-grid{grid-template-columns:1fr;gap:16px}.facebook-post-card{padding:6px}.hero:before{width:220px;height:220px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
+
 .facebook-link{display:inline-flex;margin-top:12px;color:var(--cyan);font-weight:700;font-size:13px}
 .about{display:grid;grid-template-columns:.8fr 1.2fr;gap:40px;align-items:center}
 .aboutbox{border-radius:23px;border:1px solid var(--line);background:linear-gradient(135deg,rgba(124,140,255,.13),rgba(83,224,208,.05));padding:30px}
@@ -131,120 +140,51 @@ h1 span,.gradient{background:linear-gradient(100deg,#a5b0ff 10%,#63e8d8 95%);-we
 <article class="project"><span class="num">03 / CONTENT</span><div><h3>Photo & Video</h3><p>Creative edits for memorable content across digital platforms.</p><a href="https://wa.me/8801727184207" target="_blank" rel="noopener">Discuss a similar project ↗</a></div></article>
 </div>
 <div class="facebook-work">
-<div class="facebook-copy"><div class="kicker">From our Facebook page</div><h3>Featured Facebook Post</h3><p>See our published creative work directly from the Creative Vision Studio Facebook page. Open the post on Facebook to like, share, or explore more.</p><a class="btn" href="https://www.facebook.com/permalink.php?story_fbid=pfbid0AuyZXaPfPZkq2mv2hsjPDy3i5qgb2SjYT97dhKPaAxJNJFp1JeJ2c6T9uATN7SaMl&id=61595496369037" target="_blank" rel="noopener">View on Facebook ↗</a></div>
-<div class="facebook-embed">
-<iframe <!-- Facebook Posts Section -->
-<section id="facebook-posts">
-  <h2 class="fb-section-title">Our Latest Posts</h2>
-  <p class="fb-section-subtitle">
-    Explore our latest creative work at Creative Vision Studio.
-  </p>
-
-  <div class="fb-posts-grid">
-
-    <!-- Facebook Post 1: Reel Video -->
-    <div class="fb-post-card">
-      <iframe
-        src="https://www.facebook.com/plugins/video.php?height=476&amp;href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1930164114660208%2F&amp;show_text=true&amp;width=267&amp;t=0"
-        width="267"
-        height="591"
-        style="border:none;overflow:hidden"
-        scrolling="no"
-        frameborder="0"
-        allowfullscreen="true"
-        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
-      </iframe>
-    </div>
-
-    <!-- Facebook Post 2 -->
-    <div class="fb-post-card">
-      <iframe
-        src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02MjAjWGwBahjzyv3YgJPJY3R69RcttxMooLpToGL7ZrMRkXyKhK1UhxrXqYRchoFkl%26id%3D61595496369037&amp;show_text=true&amp;width=500"
-        width="500"
-        height="660"
-        style="border:none;overflow:hidden"
-        scrolling="no"
-        frameborder="0"
-        allowfullscreen="true"
-        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
-      </iframe>
-    </div>
-
-    <!-- Facebook Post 3 -->
-    <div class="fb-post-card">
-      <iframe
-        src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid028xHcZNp7XK2xr73TP7aPLdWvEYFrjQ3JiAMhLjppM8Amzn6WUrmUjYU23VtsRjwTl%26id%3D61595496369037&amp;show_text=true&amp;width=500"
-        width="500"
-        height="698"
-        style="border:none;overflow:hidden"
-        scrolling="no"
-        frameborder="0"
-        allowfullscreen="true"
-        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
-      </iframe>
-    </div>
-
-  </div>
-</section>
-
-<style>
-#facebook-posts {
-  padding: 50px 20px;
-}
-
-.fb-section-title {
-  text-align: center;
-  margin-bottom: 10px;
-}
-
-.fb-section-subtitle {
-  text-align: center;
-  margin-bottom: 30px;
-  opacity: 0.8;
-}
-
-.fb-posts-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 24px;
-  align-items: start;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.fb-post-card {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  min-width: 0;
-  overflow: hidden;
-}
-
-.fb-post-card iframe {
-  display: block;
-  max-width: 100%;
-  border: none;
-}
-
-@media (max-width: 900px) {
-  .fb-posts-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-@media (max-width: 600px) {
-  #facebook-posts {
-    padding: 30px 10px;
-  }
-
-  .fb-posts-grid {
-    grid-template-columns: 1fr;
-  }
-}
-</style> title="Creative Vision Studio Facebook post" src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0AuyZXaPfPZkq2mv2hsjPDy3i5qgb2SjYT97dhKPaAxJNJFp1JeJ2c6T9uATN7SaMl%26id%3D61595496369037&show_text=true&width=500" width="500" height="679" style="border:none;overflow:hidden;max-width:100%;" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" loading="lazy"></iframe>
+<div class="facebook-copy">
+  <div class="kicker">From our Facebook page</div>
+  <h3>Our Latest Creative Posts</h3>
+  <p>Explore our latest work, designs, and creative updates from Creative Vision Studio. Open any post on Facebook to like, share, or learn more.</p>
+  <a class="btn" href="https://www.facebook.com/61595496369037" target="_blank" rel="noopener">Visit Our Facebook Page ↗</a>
 </div>
 </div>
-<p style="text-align:center;color:var(--muted);font-size:12px;margin-top:18px">If the Facebook post does not load, use the “View on Facebook” link above. The post must be public and embeddable.</p>
+<div class="facebook-posts-grid">
+  <!-- Post 1: Existing featured post -->
+  <article class="facebook-post-card">
+    <iframe title="Creative Vision Studio featured Facebook post"
+      src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0AuyZXaPfPZkq2mv2hsjPDy3i5qgb2SjYT97dhKPaAxJNJFp1JeJ2c6T9uATN7SaMl%26id%3D61595496369037&amp;show_text=true&amp;width=500"
+      width="500" height="679" style="border:none;overflow:hidden"
+      scrolling="no" frameborder="0" allowfullscreen="true"
+      allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" loading="lazy"></iframe>
+  </article>
+
+  <!-- Post 2: Facebook Reel -->
+  <article class="facebook-post-card">
+    <iframe title="Creative Vision Studio Facebook Reel"
+      src="https://www.facebook.com/plugins/video.php?height=476&amp;href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1930164114660208%2F&amp;show_text=true&amp;width=267&amp;t=0"
+      width="267" height="591" style="border:none;overflow:hidden"
+      scrolling="no" frameborder="0" allowfullscreen="true"
+      allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" loading="lazy"></iframe>
+  </article>
+
+  <!-- Post 3 -->
+  <article class="facebook-post-card">
+    <iframe title="Creative Vision Studio Facebook post 2"
+      src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02MjAjWGwBahjzyv3YgJPJY3R69RcttxMooLpToGL7ZrMRkXyKhK1UhxrXqYRchoFkl%26id%3D61595496369037&amp;show_text=true&amp;width=500"
+      width="500" height="660" style="border:none;overflow:hidden"
+      scrolling="no" frameborder="0" allowfullscreen="true"
+      allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" loading="lazy"></iframe>
+  </article>
+
+  <!-- Post 4 -->
+  <article class="facebook-post-card">
+    <iframe title="Creative Vision Studio Facebook post 3"
+      src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid028xHcZNp7XK2xr73TP7aPLdWvEYFrjQ3JiAMhLjppM8Amzn6WUrmUjYU23VtsRjwTl%26id%3D61595496369037&amp;show_text=true&amp;width=500"
+      width="500" height="698" style="border:none;overflow:hidden"
+      scrolling="no" frameborder="0" allowfullscreen="true"
+      allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" loading="lazy"></iframe>
+  </article>
+</div>
+<p class="facebook-note">Facebook posts must be public and embeddable to appear here. If a post does not load, open it directly on Facebook.</p>
 </div></section>
 <section class="section" id="about"><div class="wrap about">
 <div class="aboutbox"><div class="tiny">Our creative mindset</div><div class="big">Think.<br><span class="gradient">Create.</span><br>Elevate.</div><p>Good design is more than appearance. It makes your message clearer and your brand easier to trust.</p></div>
