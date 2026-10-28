@@ -28,7 +28,7 @@ a{color:inherit}img{max-width:100%;display:block}
 .skip{position:absolute;left:-999px;top:8px;background:var(--n);color:var(--on);padding:8px 14px;z-index:99}.skip:focus{left:8px}
 header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--bd)}
 header .wrap{display:flex;align-items:center;gap:14px;height:72px}
-.logo{height:42px;width:auto}[data-theme=light] .logo{filter:invert(1)}
+.logo{height:42px;width:auto}[data-theme=light] .logo{filter:invert(1)}\n.brand{display:flex;align-items:center;flex:0 0 auto;line-height:0}.brand-mark{display:block;width:58px;height:58px;object-fit:contain}.brand-copy{display:none}[data-theme=light] .brand-mark{filter:invert(1)}
 nav{margin-left:auto}nav ul{display:flex;gap:22px;list-style:none;padding:0}
 nav a{text-decoration:none;color:var(--mu);font-weight:500}nav a:hover{color:var(--fg)}
 .ib{background:none;border:1px solid var(--bd);color:var(--fg);border-radius:999px;min-width:40px;height:40px;padding:0 12px;cursor:pointer;font:500 .9rem inherit}
@@ -110,7 +110,7 @@ section{padding:52px 0}
 .fl{gap:7px}
 .fl button{font-size:.88rem;padding:7px 12px}
 header .wrap{gap:8px;height:64px}
-.brand-mark{width:36px;height:36px}.brand{min-width:112px}.brand-copy strong{font-size:1rem}.brand-copy small{font-size:.56rem}
+.brand-mark{width:48px;height:48px}.brand{min-width:0}
 .ib{min-width:36px;height:36px;padding:0 9px}
 .cp{padding:14px 15px 16px}
 }
@@ -121,13 +121,7 @@ header .wrap{gap:8px;height:64px}
 <a class="skip" href="#main" data-t="skip">Skip to content</a>
 <header><div class="wrap">
 <a href="#top" aria-label="CVS STUDIO home" class="brand">
-<svg class="brand-mark" viewBox="0 0 48 48" role="img" aria-label="CVS logo">
-<defs><linearGradient id="cvs-grad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#d4a5ff"/><stop offset="1" stop-color="#8b48ef"/></linearGradient></defs>
-<rect x="1" y="1" width="46" height="46" rx="14" fill="#170e25" stroke="#50366e"/>
-<path d="M32.8 16.8a12 12 0 1 0 0 14.4" fill="none" stroke="url(#cvs-grad)" stroke-width="4.2" stroke-linecap="round"/>
-<path d="M18 17.5h12M18 24h9M18 30.5h12" stroke="#f1eefa" stroke-width="2.7" stroke-linecap="round"/>
-</svg>
-<span class="brand-copy"><strong>CVS</strong><small>STUDIO</small></span>
+<img class="brand-mark" src="assets/cvs-logo.png" alt="CVS STUDIO logo" width="58" height="58">
 </a>
 <nav id="nv" aria-label="Main"><ul>
 <li><a href="#services" data-t="n1">Services</a></li><li><a href="#skills" data-t="skNav">Skills</a></li><li><a href="#work" data-t="n2">Portfolio</a></li><li><a href="#about" data-t="n3">About</a></li><li><a href="#reviews" data-t="n4">Reviews</a></li><li><a href="#contact" data-t="n5">Contact</a></li></ul></nav>
