@@ -11,7 +11,7 @@
 <meta property="og:title" content="CVS STUDIO | Design. Build. Grow.">
 <meta property="og:description" content="Websites, logos, posters, thumbnails and video editing by Alvi Rahman.">
 <meta property="og:url" content="https://creativevisionstudio.github.io/creativevisionbd.github.io/">
-<meta property="og:image" content="https://creativevisionstudio.github.io/creativevisionbd.github.io/assets/alvi-design.webp">
+<meta property="og:image" content="https://creativevisionstudio.github.io/creativevisionbd.github.io/assets/ALVI%20DESIGN.png">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b0712'/%3E%3Ctext x='32' y='42' font-size='28' font-weight='900' text-anchor='middle' fill='%23b57bff' font-family='Arial'%3ECVS%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Hind+Siliguri:wght@400;500;600&display=swap" rel="stylesheet">
@@ -241,21 +241,21 @@ const S=[
 ["৳200","1–2",1,["Photo Editing","ফটো এডিটিং"],["Retouching and colour correction.","রিটাচ ও কালার কারেকশন।"]],
 ["৳800","2–3",1,["Video Editing","ভিডিও এডিটিং"],["Short-form and promotional video edits made in CapCut.","CapCut-এ শর্ট ও প্রোমোশনাল ভিডিও এডিট।"]]];
 const P=[
-["burger-boss","logo",["Burger Boss logo","বার্গার বস লোগো"],["Playful retro logo for a burger brand.","বার্গার ব্র্যান্ডের জন্য রেট্রো লোগো।"]],
-["arafah-shop","logo",["Arafah Shop logo","আরাফাহ শপ লোগো"],["Minimal wordmark with a shopping-bag accent.","শপিং ব্যাগ চিহ্নসহ মিনিমাল ওয়ার্ডমার্ক।"]],
-["arafah-fashion","logo",["Arafah Fashion logo","আরাফাহ ফ্যাশন লোগো"],["Elegant serif and script lettering for a fashion brand.","ফ্যাশন ব্র্যান্ডের জন্য সেরিফ ও স্ক্রিপ্ট লেটারিং।"]],
-["gold-monogram","logo",["Gold monogram","গোল্ড মনোগ্রাম"],["Initials monogram in gold on black.","কালোর উপর সোনালি আদ্যক্ষর মনোগ্রাম।"]],
-["alvi-design","logo",["Alvi Design logo","আলভী ডিজাইন লোগো"],["Bold geometric mark with clean type.","পরিচ্ছন্ন টাইপসহ বোল্ড জ্যামিতিক চিহ্ন।"]],
-["sample-post","social",["Social post layout","সোশ্যাল পোস্ট লেআউট"],["A sample promo layout with dummy text. Not client work.","ডামি লেখাসহ নমুনা প্রোমো লেআউট। ক্লায়েন্টের কাজ নয়।"],1],
+["Brown Retro Playful Burger Food Logo.png","logo",["Burger logo","বার্গার লোগো"],["Retro logo design for a burger brand.","বার্গার ব্র্যান্ডের জন্য রেট্রো লোগো।"]],
+["Black Beige Modern Minimalist Design Studio Logo.png","logo",["Studio logo","স্টুডিও লোগো"],["Minimal modern studio logo design.","আধুনিক মিনিমাল স্টুডিও লোগো ডিজাইন।"]],
+["Pink Flat Illustrative Beauty and Fashion Place Logo.png","logo",["Beauty & fashion logo","বিউটি ও ফ্যাশন লোগো"],["Illustrative logo for a beauty and fashion brand.","বিউটি ও ফ্যাশন ব্র্যান্ডের ইলাস্ট্রেটিভ লোগো।"]],
+["Black and Gold Elegant Initials Monogram Personal Logo.png","logo",["Gold monogram","গোল্ড মনোগ্রাম"],["Initials monogram in gold on black.","কালোর উপর সোনালি আদ্যক্ষর মনোগ্রাম।"]],
+["ALVI DESIGN.png","logo",["Alvi Design logo","আলভী ডিজাইন লোগো"],["Bold geometric mark with clean type.","পরিচ্ছন্ন টাইপসহ বোল্ড জ্যামিতিক চিহ্ন।"]],
+["Beige Black Minimalist Bag Promotion Instagram Post.png","social",["Instagram promo post","ইনস্টাগ্রাম প্রোমো পোস্ট"],["Promotional social media post design.","প্রমোশনাল সোশ্যাল মিডিয়া পোস্ট ডিজাইন।"],1],
 [0,"poster",["Poster or banner","পোস্টার বা ব্যানার"]],[0,"web",["Website project","ওয়েবসাইট প্রজেক্ট"]],[0,"video",["Video or thumbnail","ভিডিও বা থাম্বনেইল"]]];
 function renderS(){const t=T[L],i=L=="bn"?1:0;$("#sg").innerHTML=S.map(s=>`<article class="card"><h3>${s[3][i]}</h3><p>${s[4][i]}</p><div class="pr">${n((s[2]?t.fr:"")+s[0])}</div><div class="mt">${t.dl}: ${n(s[1])}${t.dy}</div><a class="btn" target="_blank" rel="noopener" href="${wa("Hi CVS STUDIO, I want to order: "+s[3][0])}">${t.ord}</a></article>`).join("")}
 function renderF(){const c=T[L].cat;$("#fl").innerHTML=Object.keys(c).map(k=>`<button aria-pressed="${k==F}" data-k="${k}">${c[k]}</button>`).join("")}
 function renderP(){const t=T[L],i=L=="bn"?1:0;V=P.filter(p=>p[0]&&(F=="all"||p[1]==F));
-let h="";P.forEach(p=>{if(F!="all"&&p[1]!=F)return;h+=p[0]?`<figure><button class="it" data-i="${V.indexOf(p)}"><span class="media"><img src="assets/${p[0]}.webp" alt="${p[2][0]}. ${p[3][0]}" width="900" height="1125" loading="lazy" onerror="this.closest('.media').classList.add('is-missing');this.remove()"></span>${p[4]?`<span class="tag">${t.sm}</span>`:""}<span class="cp"><b>${p[2][i]}</b><small>${p[3][i]}</small></span></button></figure>`:`<div class="ph"><b>${p[2][i]}</b><span>${t.ps}</span></div>`});$("#pg").innerHTML=h}
+let h="";P.forEach(p=>{if(F!="all"&&p[1]!=F)return;h+=p[0]?`<figure><button class="it" data-i="${V.indexOf(p)}"><span class="media"><img src="assets/${encodeURIComponent(p[0])}" alt="${p[2][0]}. ${p[3][0]}" width="900" height="1125" loading="lazy" onerror="this.closest('.media').classList.add('is-missing');this.remove()"></span>${p[4]?`<span class="tag">${t.sm}</span>`:""}<span class="cp"><b>${p[2][i]}</b><small>${p[3][i]}</small></span></button></figure>`:`<div class="ph"><b>${p[2][i]}</b><span>${t.ps}</span></div>`});$("#pg").innerHTML=h}
 function fillSel(){const s=$("#sv"),v=s.selectedIndex;s.innerHTML=S.map(x=>`<option value="${x[3][0]}">${x[3][L=="bn"?1:0]}</option>`).join("");s.selectedIndex=Math.max(v,0)}
 function setL(l){L=l;document.documentElement.lang=l;$$("[data-t]").forEach(e=>{if(T[l][e.dataset.t])e.textContent=T[l][e.dataset.t]});$$("[data-skill-en]").forEach(e=>{e.textContent=e.dataset[l=="bn"?"skillBn":"skillEn"]});$$("[data-skill-desc-en]").forEach(e=>{e.textContent=e.dataset[l=="bn"?"skillDescBn":"skillDescEn"]});$("#lg").textContent=l=="en"?"বাংলা":"EN";renderS();renderF();renderP();fillSel();try{localStorage.setItem("cvs-l",l)}catch(e){}}
 function setTh(m){document.documentElement.dataset.theme=m;$("meta[name=theme-color]").content=m=="light"?"#f7f4fb":"#0b0712";try{localStorage.setItem("cvs-t",m)}catch(e){}}
-function show(i){const p=V[(I=(i+V.length)%V.length)],k=L=="bn"?1:0;$("#lbi").onerror=()=>{$("#lbi").style.display="none";$("#lbc").textContent=p[2][k]+" · "+p[3][k]+" — image file missing"};$("#lbi").onload=()=>{$("#lbi").style.display="block"};$("#lbi").style.display="block";$("#lbi").src=`assets/${p[0]}.webp`;$("#lbi").alt=p[2][0];$("#lbc").textContent=p[2][k]+" · "+p[3][k]}
+function show(i){const p=V[(I=(i+V.length)%V.length)],k=L=="bn"?1:0;$("#lbi").onerror=()=>{$("#lbi").style.display="none";$("#lbc").textContent=p[2][k]+" · "+p[3][k]+" — image file missing"};$("#lbi").onload=()=>{$("#lbi").style.display="block"};$("#lbi").style.display="block";$("#lbi").src=`assets/${encodeURIComponent(p[0])}`;$("#lbi").alt=p[2][0];$("#lbc").textContent=p[2][k]+" · "+p[3][k]}
 let last;function open(i){last=document.activeElement;show(i);$("#lb").hidden=false;$("#lb .x").focus()}
 function close(){$("#lb").hidden=true;last&&last.focus()}
 $("#fl").onclick=e=>{const b=e.target.closest("button");if(b){F=b.dataset.k;renderF();renderP()}};
