@@ -27,7 +27,7 @@ a{color:inherit}img{max-width:100%;display:block}
 .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
 .skip{position:absolute;left:-999px;top:8px;background:var(--n);color:var(--on);padding:8px 14px;z-index:99}.skip:focus{left:8px}
 header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--bd)}
-header .wrap{display:flex;align-items:center;gap:14px;height:66px}
+header .wrap{display:flex;align-items:center;gap:14px;height:72px}
 .logo{height:42px;width:auto}[data-theme=light] .logo{filter:invert(1)}
 nav{margin-left:auto}nav ul{display:flex;gap:22px;list-style:none;padding:0}
 nav a{text-decoration:none;color:var(--mu);font-weight:500}nav a:hover{color:var(--fg)}
@@ -36,19 +36,19 @@ nav a{text-decoration:none;color:var(--mu);font-weight:500}nav a:hover{color:var
 .btn{display:inline-block;padding:11px 22px;border-radius:999px;background:var(--n);color:var(--on);font-weight:600;text-decoration:none;border:1px solid var(--n);cursor:pointer;font-size:1rem;transition:box-shadow .2s}
 .btn:hover{box-shadow:0 0 26px color-mix(in srgb,var(--n) 55%,transparent)}
 .btn.o{background:none;color:var(--fg);border-color:var(--bd)}.btn.o:hover{border-color:var(--n)}
-.hero{position:relative;overflow:hidden;padding:64px 0 72px}
+.hero{position:relative;overflow:hidden;padding:clamp(64px,10vw,118px) 0 clamp(66px,9vw,104px)}
 .hero:before{content:"";position:absolute;right:-12vw;top:-10vw;width:60vw;height:60vw;background:radial-gradient(closest-side,color-mix(in srgb,var(--n) 30%,transparent),transparent);pointer-events:none}
 h1{position:relative}
 .w{display:block;font:400 clamp(3.1rem,14vw,9rem)/.95 'Archivo Black',Impact,sans-serif;transform:skewX(-8deg);color:var(--c);-webkit-text-stroke:2px var(--s);animation:fill 1s both;animation-delay:var(--d)}
 .w:nth-child(1){--c:var(--fg);--s:var(--fg);--d:.1s}.w:nth-child(2){--c:var(--n);--s:var(--n);--d:.5s}.w:nth-child(3){--c:var(--g);--s:var(--g);--d:.9s}
 @keyframes fill{from{color:transparent}}
-.hero p{position:relative;max-width:34rem;margin:28px 0;color:var(--mu);font-size:1.15rem}
+.hero p{position:relative;max-width:36rem;margin:30px 0;color:var(--mu);font-size:clamp(1.02rem,2vw,1.2rem)}
 .row{display:flex;flex-wrap:wrap;gap:12px;position:relative}
-section{padding:72px 0;border-top:1px solid var(--bd)}
+section{padding:clamp(54px,7vw,88px) 0;border-top:1px solid var(--bd)}
 h2{font:400 clamp(1.9rem,5vw,3rem)/1.1 'Archivo Black','Hind Siliguri',sans-serif;margin-bottom:12px}
-.lead{color:var(--mu);max-width:40rem;margin-bottom:34px}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px}
-.card{background:var(--pn);border:1px solid var(--bd);border-radius:16px;padding:22px;display:flex;flex-direction:column;gap:8px;transition:border-color .2s}
+.lead{color:var(--mu);max-width:42rem;margin:0 0 34px;font-size:1.04rem}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;align-items:stretch}
+.card{background:linear-gradient(145deg,var(--pn),color-mix(in srgb,var(--pn) 88%,var(--n)));border:1px solid var(--bd);border-radius:20px;padding:24px;display:flex;flex-direction:column;gap:10px;transition:transform .25s,border-color .25s,box-shadow .25s}.card:hover{transform:translateY(-3px);border-color:var(--n);box-shadow:0 14px 32px rgba(0,0,0,.14)}
 .card:hover{border-color:var(--n)}
 .card h3{font-size:1.2rem;font-weight:600}.card p{color:var(--mu);flex:1}
 .pr{font:400 1.45rem 'Archivo Black','Hind Siliguri',sans-serif;color:var(--g)}
@@ -56,13 +56,29 @@ h2{font:400 clamp(1.9rem,5vw,3rem)/1.1 'Archivo Black','Hind Siliguri',sans-seri
 .fl{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
 .fl button{background:none;border:1px solid var(--bd);color:var(--mu);padding:7px 16px;border-radius:999px;cursor:pointer;font:500 .95rem inherit}
 .fl button[aria-pressed=true]{background:var(--n);color:var(--on);border-color:var(--n)}
-.it{position:relative;padding:0;border:1px solid var(--bd);border-radius:16px;overflow:hidden;background:var(--pn);cursor:zoom-in;text-align:left;color:inherit;font:inherit;display:block;width:100%}
-.it img{width:100%;aspect-ratio:1;object-fit:cover}
-.it:hover{border-color:var(--n)}
-.cp{display:block;padding:12px 16px}.cp b{display:block;font-weight:600}.cp small{color:var(--mu);display:block;line-height:1.4}
-.tag{position:absolute;top:10px;left:10px;background:var(--g);color:#1a1228;font-size:.8rem;font-weight:600;padding:2px 10px;border-radius:999px}
+.it{position:relative;padding:0;border:1px solid var(--bd);border-radius:20px;overflow:hidden;background:var(--pn);cursor:zoom-in;text-align:left;color:inherit;font:inherit;display:flex;flex-direction:column;width:100%;height:100%;box-shadow:0 8px 28px rgba(0,0,0,.10);transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease}
+.it .media{display:block;position:relative;width:100%;aspect-ratio:4/5;overflow:hidden;isolation:isolate;background:radial-gradient(ellipse at 18% 15%,color-mix(in srgb,var(--n) 38%,transparent),transparent 48%),linear-gradient(145deg,#201332,#0c0914 72%)}
+.it .media:before{content:"CVS";position:absolute;z-index:-1;inset:auto -10% -13% auto;font:900 clamp(5rem,14vw,10rem)/1 'Archivo Black',sans-serif;letter-spacing:-.08em;color:rgba(255,255,255,.035)}
+.it .media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .45s ease}
+.it .media.is-missing{display:grid;place-items:center;padding:22px;background:radial-gradient(ellipse at 15% 10%,rgba(181,123,255,.32),transparent 48%),radial-gradient(ellipse at 90% 90%,rgba(224,198,140,.13),transparent 38%),linear-gradient(145deg,#20132f,#0b0712 78%)}
+.it .media.is-missing:after{content:"CVS STUDIO";display:block;color:#f1eefa;font:400 clamp(1.1rem,2.2vw,2rem)/1.2 'Archivo Black',sans-serif;letter-spacing:.04em;text-align:center;border:1px solid rgba(181,123,255,.5);border-radius:14px;padding:22px 14px;width:min(88%,300px);box-shadow:0 12px 38px rgba(0,0,0,.18)}
+.it .media.is-missing:before{content:"DESIGN PORTFOLIO";position:absolute;top:18px;left:18px;right:18px;color:#e0c68c;font-size:.68rem;letter-spacing:.18em;text-align:center}
+.it:hover{border-color:var(--n);transform:translateY(-4px);box-shadow:0 18px 42px rgba(0,0,0,.24)}.it:hover .media img{transform:scale(1.045)}.it:focus-visible{outline-offset:4px}figure{min-width:0;height:100%}
+.cp{display:block;padding:16px 17px 18px;flex:1}.cp b{display:block;font-weight:600;font-size:1.05rem;margin-bottom:4px}.cp small{color:var(--mu);display:block;line-height:1.5}
+.tag{position:absolute;top:12px;left:12px;background:var(--g);color:#1a1228;font-size:.76rem;font-weight:600;padding:4px 11px;border-radius:999px;box-shadow:0 4px 14px rgba(0,0,0,.18)}
 .ph{border:2px dashed var(--bd);border-radius:16px;min-height:240px;display:flex;flex-direction:column;justify-content:center;gap:6px;padding:22px;color:var(--mu)}
 .ph b{color:var(--fg)}
+.skills-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.skill-card{position:relative;isolation:isolate;overflow:hidden;min-height:220px;padding:22px;border:1px solid var(--bd);border-radius:20px;background:linear-gradient(145deg,var(--pn),color-mix(in srgb,var(--pn) 84%,var(--n)));display:flex;flex-direction:column;align-items:flex-start;transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease}
+.skill-card:before{content:"";position:absolute;z-index:-1;width:150px;height:150px;right:-72px;top:-72px;border-radius:50%;background:color-mix(in srgb,var(--n) 14%,transparent);transition:transform .3s ease}
+.skill-card:hover{transform:translateY(-5px);border-color:var(--n);box-shadow:0 16px 36px rgba(0,0,0,.18)}
+.skill-card:hover:before{transform:scale(1.3)}
+.skill-no{position:absolute;right:17px;top:15px;color:var(--mu);font-size:.78rem;letter-spacing:.12em}
+.skill-symbol{display:grid;place-items:center;min-width:52px;height:46px;padding:0 10px;margin-bottom:20px;border-radius:13px;background:color-mix(in srgb,var(--n) 18%,var(--pn));border:1px solid color-mix(in srgb,var(--n) 35%,var(--bd));color:var(--n);font:400 .85rem 'Archivo Black',sans-serif;letter-spacing:.04em}
+.skill-card h3{font-size:1.08rem;line-height:1.35;margin-bottom:8px}
+.skill-card p{font-size:.92rem;line-height:1.55;color:var(--mu);margin-top:auto}
+@media(max-width:1050px){.skills-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:520px){.skills-grid{grid-template-columns:1fr;gap:12px}.skill-card{min-height:185px;padding:20px}.skill-symbol{margin-bottom:14px}}
 .two{display:grid;grid-template-columns:1fr 1fr;gap:40px}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}.chips span{border:1px solid var(--bd);border-radius:8px;padding:4px 12px;background:var(--pn)}
 form{display:grid;gap:14px}label{display:grid;gap:4px;font-weight:500}
@@ -71,28 +87,50 @@ textarea{min-height:130px;resize:vertical}
 .hp{position:absolute;left:-999px}
 #st{min-height:1.6em;color:var(--g)}
 .cl{list-style:none;padding:0;display:grid;gap:10px;margin-top:18px}.cl a{color:var(--n);text-decoration:none;font-weight:500}.cl a:hover{text-decoration:underline}
-footer{padding:28px 0;border-top:1px solid var(--bd);color:var(--mu);text-align:center}
+footer{padding:32px 0;border-top:1px solid var(--bd);color:var(--mu);text-align:center;font-size:.94rem}
 #lb{position:fixed;inset:0;z-index:50;background:rgba(5,3,10,.92);display:flex;align-items:center;justify-content:center;gap:10px;padding:16px}
 #lb[hidden]{display:none}#lb figure{max-width:min(92vw,720px);text-align:center;color:#f1eefa}
-#lbi{max-height:78vh;margin:0 auto;border-radius:12px;animation:pop .25s}
+#lbi{max-height:78vh;max-width:min(88vw,576px);width:auto;aspect-ratio:4/5;object-fit:contain;margin:0 auto;border-radius:14px;animation:pop .25s}
 @keyframes pop{from{transform:scale(.94);opacity:0}}
 #lb button{background:#1c1330;color:#fff;border:1px solid #3a2c58;border-radius:50%;width:44px;height:44px;font-size:1.5rem;cursor:pointer}
 #lb .x{position:absolute;top:14px;right:14px}
+@media(max-width:1050px){.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}}
 @media(max-width:820px){
 #mn{display:inline-block}
 nav{position:absolute;top:66px;left:0;right:0;background:var(--bg);border-bottom:1px solid var(--bd);display:none;margin:0}
 nav.open{display:block}nav ul{flex-direction:column;padding:12px 20px 18px}
 .hd{margin-left:auto}.two{grid-template-columns:1fr;gap:34px}
 #lb button.pv,#lb button.nx{position:absolute;bottom:14px}#lb .pv{left:14px}#lb .nx{right:14px}}
+@media(max-width:520px){
+.wrap{padding:0 16px}
+.hero{padding:54px 0 60px}
+section{padding:52px 0}
+.grid{grid-template-columns:1fr;gap:14px}
+.it .media{aspect-ratio:4/5}
+.fl{gap:7px}
+.fl button{font-size:.88rem;padding:7px 12px}
+header .wrap{gap:8px;height:64px}
+.brand-mark{width:36px;height:36px}.brand{min-width:112px}.brand-copy strong{font-size:1rem}.brand-copy small{font-size:.56rem}
+.ib{min-width:36px;height:36px;padding:0 9px}
+.cp{padding:14px 15px 16px}
+}
 @media(prefers-reduced-motion:reduce){.w,#lbi{animation:none}html{scroll-behavior:auto}*{transition:none!important}}
 </style>
 </head>
 <body>
 <a class="skip" href="#main" data-t="skip">Skip to content</a>
 <header><div class="wrap">
-<a href="#top" aria-label="CVS STUDIO home"><img class="logo" src="assets/logo.png" alt="CVS STUDIO" width="42" height="42"></a>
+<a href="#top" aria-label="CVS STUDIO home" class="brand">
+<svg class="brand-mark" viewBox="0 0 48 48" role="img" aria-label="CVS logo">
+<defs><linearGradient id="cvs-grad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#d4a5ff"/><stop offset="1" stop-color="#8b48ef"/></linearGradient></defs>
+<rect x="1" y="1" width="46" height="46" rx="14" fill="#170e25" stroke="#50366e"/>
+<path d="M32.8 16.8a12 12 0 1 0 0 14.4" fill="none" stroke="url(#cvs-grad)" stroke-width="4.2" stroke-linecap="round"/>
+<path d="M18 17.5h12M18 24h9M18 30.5h12" stroke="#f1eefa" stroke-width="2.7" stroke-linecap="round"/>
+</svg>
+<span class="brand-copy"><strong>CVS</strong><small>STUDIO</small></span>
+</a>
 <nav id="nv" aria-label="Main"><ul>
-<li><a href="#services" data-t="n1">Services</a></li><li><a href="#work" data-t="n2">Portfolio</a></li><li><a href="#about" data-t="n3">About</a></li><li><a href="#reviews" data-t="n4">Reviews</a></li><li><a href="#contact" data-t="n5">Contact</a></li></ul></nav>
+<li><a href="#services" data-t="n1">Services</a></li><li><a href="#skills" data-t="skNav">Skills</a></li><li><a href="#work" data-t="n2">Portfolio</a></li><li><a href="#about" data-t="n3">About</a></li><li><a href="#reviews" data-t="n4">Reviews</a></li><li><a href="#contact" data-t="n5">Contact</a></li></ul></nav>
 <div class="hd" style="display:flex;gap:8px">
 <button class="ib" id="lg" aria-label="Switch language">বাংলা</button>
 <button class="ib" id="th" aria-label="Toggle dark and light mode">◐</button>
@@ -109,6 +147,21 @@ nav.open{display:block}nav ul{flex-direction:column;padding:12px 20px 18px}
 <h2 data-t="n1">Services</h2>
 <p class="lead" data-t="pn">Prices are starting rates. The final quotation depends on your project requirements.</p>
 <div class="grid" id="sg"></div>
+</div></section>
+
+<section id="skills"><div class="wrap">
+<h2 data-t="skTitle">My Skills</h2>
+<p class="lead" data-t="skLead">Creative and digital skills to help your brand stand out online and offline.</p>
+<div class="skills-grid" id="skills-grid">
+<article class="skill-card"><span class="skill-no">01</span><span class="skill-symbol">WEB</span><h3 data-skill-en="Web Development" data-skill-bn="ওয়েব ডেভেলপমেন্ট">Web Development</h3><p data-skill-desc-en="Responsive, modern websites built for your goals." data-skill-desc-bn="আপনার লক্ষ্য অনুযায়ী আধুনিক ও রেসপন্সিভ ওয়েবসাইট।">Responsive, modern websites built for your goals.</p></article>
+<article class="skill-card"><span class="skill-no">02</span><span class="skill-symbol">PST</span><h3 data-skill-en="Poster Design" data-skill-bn="পোস্টার ডিজাইন">Poster Design</h3><p data-skill-desc-en="Promotional posters that catch attention." data-skill-desc-bn="দৃষ্টি আকর্ষণকারী প্রমোশনাল পোস্টার।">Promotional posters that catch attention.</p></article>
+<article class="skill-card"><span class="skill-no">03</span><span class="skill-symbol">LOGO</span><h3 data-skill-en="Logo Design" data-skill-bn="লোগো ডিজাইন">Logo Design</h3><p data-skill-desc-en="Distinctive visual identities for brands." data-skill-desc-bn="ব্র্যান্ডের জন্য স্বতন্ত্র ভিজ্যুয়াল পরিচিতি।">Distinctive visual identities for brands.</p></article>
+<article class="skill-card"><span class="skill-no">04</span><span class="skill-symbol">GD</span><h3 data-skill-en="Graphic Design" data-skill-bn="গ্রাফিক ডিজাইন">Graphic Design</h3><p data-skill-desc-en="Polished visuals for digital and print." data-skill-desc-bn="ডিজিটাল ও প্রিন্টের জন্য আকর্ষণীয় ডিজাইন।">Polished visuals for digital and print.</p></article>
+<article class="skill-card"><span class="skill-no">05</span><span class="skill-symbol">VID</span><h3 data-skill-en="Video Editing" data-skill-bn="ভিডিও এডিটিং">Video Editing</h3><p data-skill-desc-en="Engaging edits for stories and campaigns." data-skill-desc-bn="স্টোরি ও ক্যাম্পেইনের জন্য আকর্ষণীয় এডিট।">Engaging edits for stories and campaigns.</p></article>
+<article class="skill-card"><span class="skill-no">06</span><span class="skill-symbol">IMG</span><h3 data-skill-en="Photo Editing" data-skill-bn="ফটো এডিটিং">Photo Editing</h3><p data-skill-desc-en="Clean retouching and balanced colour." data-skill-desc-bn="পরিচ্ছন্ন রিটাচিং ও সুন্দর কালার ব্যালান্স।">Clean retouching and balanced colour.</p></article>
+<article class="skill-card"><span class="skill-no">07</span><span class="skill-symbol">SOC</span><h3 data-skill-en="Social Media Content Creation" data-skill-bn="সোশ্যাল মিডিয়া কনটেন্ট তৈরি">Social Media Content Creation</h3><p data-skill-desc-en="Consistent content for a stronger social presence." data-skill-desc-bn="সোশ্যাল মিডিয়ায় শক্তিশালী উপস্থিতির জন্য কনটেন্ট।">Consistent content for a stronger social presence.</p></article>
+<article class="skill-card"><span class="skill-no">08</span><span class="skill-symbol">TH</span><h3 data-skill-en="Thumbnail Design" data-skill-bn="থাম্বনেইল ডিজাইন">Thumbnail Design</h3><p data-skill-desc-en="Clickable, eye-catching video thumbnails." data-skill-desc-bn="দৃষ্টি আকর্ষণকারী ভিডিও থাম্বনেইল।">Clickable, eye-catching video thumbnails.</p></article>
+</div>
 </div></section>
 
 <section id="work"><div class="wrap">
@@ -159,7 +212,7 @@ nav.open{display:block}nav ul{flex-direction:column;padding:12px 20px 18px}
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 const WA="8801727184207",MAIL="ertugrulghazixalvi12@gmail.com",wa=t=>`https://wa.me/${WA}?text=${encodeURIComponent(t)}`;
 let L="en",F="all",V=[],I=0;
-const T={en:{skip:"Skip to content",n1:"Services",n2:"Portfolio",n3:"About",n4:"Reviews",n5:"Contact",
+const T={en:{skip:"Skip to content",n1:"Services",n2:"Portfolio",n3:"About",n4:"Reviews",n5:"Contact",skNav:"Skills",skTitle:"My Skills",skLead:"Creative and digital skills to help your brand stand out online and offline.",
 sub:"Alvi Rahman builds modern websites, logos, posters, thumbnails and video edits for brands that want to look sharp.",c1:"Start a project",c2:"See the work",
 pn:"Prices are starting rates. The final quotation depends on your project requirements.",pl:"Selected design work. Dashed tiles are placeholders until real projects are added.",
 ab:"I’m Alvi Rahman, a creative web developer and designer behind CVS STUDIO. I create modern websites, logos, posters, banners, thumbnails, and engaging video edits. My focus is on quality, creativity, and designs that match each client’s needs.",
@@ -168,7 +221,7 @@ rv:"No client reviews yet. These placeholders will be replaced with genuine revi
 ct:"Tell me what you need. I reply on WhatsApp or email.",f1:"Name",f2:"Email",f3:"Service",f4:"Project details",f5:"Send message",
 ok:"Thanks! Your message was sent.",er:"Message not sent. Please use WhatsApp or email instead.",ord:"Order on WhatsApp",dl:"Delivery",fr:"From ",dy:" days",ps:"Placeholder: add your real work here",sm:"Sample",
 cat:{all:"All",logo:"Logo",social:"Social media",poster:"Poster & banner",web:"Website",video:"Video & thumbnail"}},
-bn:{skip:"মূল অংশে যান",n1:"সার্ভিস",n2:"পোর্টফোলিও",n3:"আমার সম্পর্কে",n4:"রিভিউ",n5:"যোগাযোগ",
+bn:{skip:"মূল অংশে যান",n1:"সার্ভিস",n2:"পোর্টফোলিও",n3:"আমার সম্পর্কে",n4:"রিভিউ",n5:"যোগাযোগ",skNav:"দক্ষতা",skTitle:"আমার দক্ষতা",skLead:"আপনার ব্র্যান্ডকে অনলাইনে ও অফলাইনে আলাদা করে তুলতে সৃজনশীল ও ডিজিটাল দক্ষতা।",
 sub:"আলভী রহমান আধুনিক ওয়েবসাইট, লোগো, পোস্টার, থাম্বনেইল ও ভিডিও এডিট তৈরি করেন, যারা তাদের ব্র্যান্ডকে আকর্ষণীয় করতে চান।",c1:"প্রজেক্ট শুরু করুন",c2:"কাজ দেখুন",
 pn:"মূল্য শুরুর হার। প্রজেক্টের চাহিদা অনুযায়ী চূড়ান্ত কোটেশন নির্ধারিত হবে।",pl:"নির্বাচিত ডিজাইন কাজ। ড্যাশ দেওয়া কার্ডগুলো আসল কাজ যোগ করা পর্যন্ত প্লেসহোল্ডার।",
 ab:"আমি আলভী রহমান, CVS STUDIO-এর ক্রিয়েটিভ ওয়েব ডেভেলপার ও ডিজাইনার। আমি আধুনিক ওয়েবসাইট, লোগো, পোস্টার, ব্যানার, থাম্বনেইল এবং আকর্ষণীয় ভিডিও এডিট তৈরি করি। মান, সৃজনশীলতা এবং প্রতিটি ক্লায়েন্টের চাহিদা অনুযায়ী ডিজাইনই আমার ফোকাস।",
@@ -198,11 +251,11 @@ const P=[
 function renderS(){const t=T[L],i=L=="bn"?1:0;$("#sg").innerHTML=S.map(s=>`<article class="card"><h3>${s[3][i]}</h3><p>${s[4][i]}</p><div class="pr">${n((s[2]?t.fr:"")+s[0])}</div><div class="mt">${t.dl}: ${n(s[1])}${t.dy}</div><a class="btn" target="_blank" rel="noopener" href="${wa("Hi CVS STUDIO, I want to order: "+s[3][0])}">${t.ord}</a></article>`).join("")}
 function renderF(){const c=T[L].cat;$("#fl").innerHTML=Object.keys(c).map(k=>`<button aria-pressed="${k==F}" data-k="${k}">${c[k]}</button>`).join("")}
 function renderP(){const t=T[L],i=L=="bn"?1:0;V=P.filter(p=>p[0]&&(F=="all"||p[1]==F));
-let h="";P.forEach(p=>{if(F!="all"&&p[1]!=F)return;h+=p[0]?`<figure><button class="it" data-i="${V.indexOf(p)}"><img src="assets/${p[0]}.webp" alt="${p[2][0]}. ${p[3][0]}" width="900" height="900" loading="lazy">${p[4]?`<span class="tag">${t.sm}</span>`:""}<span class="cp"><b>${p[2][i]}</b><small>${p[3][i]}</small></span></button></figure>`:`<div class="ph"><b>${p[2][i]}</b><span>${t.ps}</span></div>`});$("#pg").innerHTML=h}
+let h="";P.forEach(p=>{if(F!="all"&&p[1]!=F)return;h+=p[0]?`<figure><button class="it" data-i="${V.indexOf(p)}"><span class="media"><img src="assets/${p[0]}.webp" alt="${p[2][0]}. ${p[3][0]}" width="900" height="1125" loading="lazy" onerror="this.closest('.media').classList.add('is-missing');this.remove()"></span>${p[4]?`<span class="tag">${t.sm}</span>`:""}<span class="cp"><b>${p[2][i]}</b><small>${p[3][i]}</small></span></button></figure>`:`<div class="ph"><b>${p[2][i]}</b><span>${t.ps}</span></div>`});$("#pg").innerHTML=h}
 function fillSel(){const s=$("#sv"),v=s.selectedIndex;s.innerHTML=S.map(x=>`<option value="${x[3][0]}">${x[3][L=="bn"?1:0]}</option>`).join("");s.selectedIndex=Math.max(v,0)}
-function setL(l){L=l;document.documentElement.lang=l;$$("[data-t]").forEach(e=>e.textContent=T[l][e.dataset.t]);$("#lg").textContent=l=="en"?"বাংলা":"EN";renderS();renderF();renderP();fillSel();try{localStorage.setItem("cvs-l",l)}catch(e){}}
+function setL(l){L=l;document.documentElement.lang=l;$$("[data-t]").forEach(e=>{if(T[l][e.dataset.t])e.textContent=T[l][e.dataset.t]});$$("[data-skill-en]").forEach(e=>{e.textContent=e.dataset[l=="bn"?"skillBn":"skillEn"]});$$("[data-skill-desc-en]").forEach(e=>{e.textContent=e.dataset[l=="bn"?"skillDescBn":"skillDescEn"]});$("#lg").textContent=l=="en"?"বাংলা":"EN";renderS();renderF();renderP();fillSel();try{localStorage.setItem("cvs-l",l)}catch(e){}}
 function setTh(m){document.documentElement.dataset.theme=m;$("meta[name=theme-color]").content=m=="light"?"#f7f4fb":"#0b0712";try{localStorage.setItem("cvs-t",m)}catch(e){}}
-function show(i){const p=V[(I=(i+V.length)%V.length)],k=L=="bn"?1:0;$("#lbi").src=`assets/${p[0]}.webp`;$("#lbi").alt=p[2][0];$("#lbc").textContent=p[2][k]+" · "+p[3][k]}
+function show(i){const p=V[(I=(i+V.length)%V.length)],k=L=="bn"?1:0;$("#lbi").onerror=()=>{$("#lbi").style.display="none";$("#lbc").textContent=p[2][k]+" · "+p[3][k]+" — image file missing"};$("#lbi").onload=()=>{$("#lbi").style.display="block"};$("#lbi").style.display="block";$("#lbi").src=`assets/${p[0]}.webp`;$("#lbi").alt=p[2][0];$("#lbc").textContent=p[2][k]+" · "+p[3][k]}
 let last;function open(i){last=document.activeElement;show(i);$("#lb").hidden=false;$("#lb .x").focus()}
 function close(){$("#lb").hidden=true;last&&last.focus()}
 $("#fl").onclick=e=>{const b=e.target.closest("button");if(b){F=b.dataset.k;renderF();renderP()}};
